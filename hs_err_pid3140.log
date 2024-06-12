@@ -1,0 +1,218 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 264241152 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3548), pid=3140, tid=5232
+#
+# JRE version:  (17.0.11+7) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (17.0.11+7-LTS-207, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.1.2\lib\idea_rt.jar=58110:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.1.2\bin -Dfile.encoding=UTF-8 com.example.mongo.MongoApplication
+
+Host: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz, 8 cores, 15G,  Windows 11 , 64 bit Build 22621 (10.0.22621.3527)
+Time: Mon Jun 10 13:50:22 2024  Windows 11 , 64 bit Build 22621 (10.0.22621.3527) elapsed time: 0.014803 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001b5c4ccbfa0):  JavaThread "Unknown thread" [_thread_in_vm, id=5232, stack(0x0000007165100000,0x0000007165200000)]
+
+Stack: [0x0000007165100000,0x0000007165200000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x679cca]
+V  [jvm.dll+0x7da13d]
+V  [jvm.dll+0x7dba83]
+V  [jvm.dll+0x7dc0f3]
+V  [jvm.dll+0x2449af]
+V  [jvm.dll+0x676ce9]
+V  [jvm.dll+0x66b852]
+V  [jvm.dll+0x3018d6]
+V  [jvm.dll+0x308e76]
+V  [jvm.dll+0x3596ee]
+V  [jvm.dll+0x35991f]
+V  [jvm.dll+0x2d89a8]
+V  [jvm.dll+0x2d9914]
+V  [jvm.dll+0x7ac6b1]
+V  [jvm.dll+0x366f61]
+V  [jvm.dll+0x78b609]
+V  [jvm.dll+0x3ec22f]
+V  [jvm.dll+0x3ede61]
+C  [jli.dll+0x5297]
+C  [ucrtbase.dll+0x29333]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5aa48]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffea8997a18, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001b5c4d38420 GCTaskThread "GC Thread#0" [stack: 0x0000007165200000,0x0000007165300000] [id=24108]
+  0x000001b5c4d48dd0 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000007165300000,0x0000007165400000] [id=20240]
+  0x000001b5c4d496f0 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000007165400000,0x0000007165500000] [id=7248]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffea81c9497]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001b5c4cc8820] Heap_lock - owner thread: 0x000001b5c4ccbfa0
+
+Heap address: 0x0000000704a00000, size: 4022 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000704a00000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffea85b3559]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.009 Loaded shared library C:\Program Files\Java\jdk-17\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff6d7b90000 - 0x00007ff6d7ba0000 	C:\Program Files\Java\jdk-17\bin\java.exe
+0x00007fff38f90000 - 0x00007fff391a7000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fff37fd0000 - 0x00007fff38094000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fff362b0000 - 0x00007fff36657000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fff367f0000 - 0x00007fff36901000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fff1e460000 - 0x00007fff1e479000 	C:\Program Files\Java\jdk-17\bin\jli.dll
+0x00007fff1e500000 - 0x00007fff1e51b000 	C:\Program Files\Java\jdk-17\bin\VCRUNTIME140.dll
+0x00007fff36da0000 - 0x00007fff36e52000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fff36f60000 - 0x00007fff37007000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fff36e60000 - 0x00007fff36f08000 	C:\WINDOWS\System32\sechost.dll
+0x00007fff36790000 - 0x00007fff367b8000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007fff37eb0000 - 0x00007fff37fc5000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fff38220000 - 0x00007fff383ce000 	C:\WINDOWS\System32\USER32.dll
+0x00007fff367c0000 - 0x00007fff367e6000 	C:\WINDOWS\System32\win32u.dll
+0x00007fff37260000 - 0x00007fff37289000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fff36910000 - 0x00007fff36a29000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fff189c0000 - 0x00007fff18c53000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3527_none_270e469b73872a76\COMCTL32.dll
+0x00007fff36ab0000 - 0x00007fff36b4a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fff2bd50000 - 0x00007fff2bd5a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fff37e70000 - 0x00007fff37ea1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007fff1e450000 - 0x00007fff1e45c000 	C:\Program Files\Java\jdk-17\bin\vcruntime140_1.dll
+0x00007fff0a300000 - 0x00007fff0a38e000 	C:\Program Files\Java\jdk-17\bin\msvcp140.dll
+0x00007ffea7ee0000 - 0x00007ffea8ac0000 	C:\Program Files\Java\jdk-17\bin\server\jvm.dll
+0x00007fff372f0000 - 0x00007fff372f8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007fff15f90000 - 0x00007fff15f99000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007fff2c650000 - 0x00007fff2c684000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fff37080000 - 0x00007fff370f1000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fff35360000 - 0x00007fff35378000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007fff1e430000 - 0x00007fff1e43a000 	C:\Program Files\Java\jdk-17\bin\jimage.dll
+0x00007fff33b00000 - 0x00007fff33d32000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007fff383d0000 - 0x00007fff38758000 	C:\WINDOWS\System32\combase.dll
+0x00007fff36cc0000 - 0x00007fff36d97000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007fff16250000 - 0x00007fff16282000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007fff36a30000 - 0x00007fff36aa9000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007fff1e2b0000 - 0x00007fff1e2be000 	C:\Program Files\Java\jdk-17\bin\instrument.dll
+0x00007fff1dd00000 - 0x00007fff1dd25000 	C:\Program Files\Java\jdk-17\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-17\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3527_none_270e469b73872a76;C:\Program Files\Java\jdk-17\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.1.2\lib\idea_rt.jar=58110:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.1.2\bin -Dfile.encoding=UTF-8 
+java_command: com.example.mongo.MongoApplication
+java_class_path (initial): C:\backend23\work\intellijwork\mongo\out\production\classes;C:\backend23\work\intellijwork\mongo\out\production\resources;C:\Users\82107\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-data-mongodb\3.2.6\4d4363eb26a0c2cf2a8fed63da8d9892bb36b80f\spring-boot-starter-data-mongodb-3.2.6.jar;C:\Users\82107\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-thymeleaf\3.2.6\73ef136b3c7b192ad42891f5838573f3abe6f5\spring-boot-starter-thymeleaf-3.2.6.jar;C:\Users\82107\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-web\3.2.6\8a06aa9bee3a1de70595a92a91b702c9923c49fc\spring-boot-starter-web-3.2.6.jar;C:\Users\82107\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter\3.2.6\cd5208accde89f97ec11b80db258b043dd71c1f6\spring-boot-starter-3.2.6.jar;C:\Users\82107\.gradle\caches\modules-2\files-2.1\org.mongodb\mongodb-driver-sync\4.11.2\fc6eb93eea5d9a845d1c64ec2cbb318587204895\mongodb-driver-sync-4.11.2.jar;C:\Users\82107\.gradle\caches\modules-2\files-2.1\org.springframework.data\spring-data-mongodb\4.2.6\306bf3eabb1de2b89c7a6b958c2e34db8fb564b7\spring-data-mongodb-4.2.6.jar;C:\Users\82107\.gradle\caches\modules-2\files-2.1\org.thymeleaf\thymeleaf-spring6\3.1.2.RELEASE\6030c7b4e260c41336f378e53da6e8531263f24b\thymeleaf-spring6-3.1.2.RELEASE.jar;C:\Users\82107\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-json\3.2.6\829e99fdb67aa7a09493416afd954e8b2cb90075\spring-boot-starter-json-3.2.6.jar;C:\Users\82107\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-tomcat\3.2.6\10b779100dd0593134492c40c100325cf49b2058\spring-boot-starter-tomcat-3.2.6.jar;C:\Users\82107\.gradle\caches\modules-2\files-2.1\org.springframework\spring-webmvc\6.1.8\8496f8c010625bc0b857d19d2e93a9bdd691c1af\spring-webmvc-6.1.8.jar;C:\Users\82107\.gradle\caches\modules-2\files-2.1\org.springframework\spring-web
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 264241152                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4217372672                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4217372672                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\Program Files\MongoDB\Server\5.0\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files\Java\jdk-11\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\82107\AppData\Local\Microsoft\WindowsApps;
+USERNAME=82107
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.3527)
+OS uptime: 3 days 15:43 hours
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0x8a, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, clwb, avx512_vbmi2, avx512_vbmi
+
+Memory: 4k page, system-wide physical 16080M (2482M free)
+TotalPageFile size 18986M (AvailPageFile size 111M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 60M, peak: 312M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (17.0.11+7-LTS-207) for windows-amd64 JRE (17.0.11+7-LTS-207), built on Mar 11 2024 19:01:50 by "mach5one" with MS VC++ 17.6 (VS2022)
+
+END.
